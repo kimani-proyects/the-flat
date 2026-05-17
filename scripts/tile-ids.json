@@ -1,0 +1,40 @@
+{
+  "_comment": "IDs GLOBALES (ya con firstgid incluido). Cuatro tilesets registrados en gen-tilemap.mjs v3: Room_Builder master firstgid=1 (rango 1..8588), Floors subfile firstgid=8589 (rango 8589..9188), Walls subfile firstgid=9189 (rango 9189..10468), Interiors firstgid=10469 (rango 10469..27492). Estos picks están hechos con rows medias/bajas de cada strip del subfile para evitar caer en zonas de header/separador que renderizan vacías. Si algún tile sigue feo: en el juego pulsa 'P' para abrir el debug-palette overlay, identifica el ID del tile que quieres, y reemplaza aquí.",
+
+  "floors": {
+    "wood":          8714,
+    "wood_dark":     8819,
+    "tile":          8677,
+    "carpet_pink":   8718,
+    "carpet_purple": 8778,
+    "stone":         8962,
+    "_map": {
+      "wood":          "Floors subfile strip 2 (cols 4-6), row 8 col 5 → localId 125",
+      "wood_dark":     "Floors subfile strip 2, row 15 col 5 → localId 230",
+      "tile":          "Floors subfile strip 4 (cols 12-14), row 5 col 13 → localId 88 (baldosa azul clara)",
+      "carpet_pink":   "Floors subfile strip 3 (cols 8-10), row 8 col 9 → localId 129",
+      "carpet_purple": "Floors subfile strip 3, row 12 col 9 → localId 189",
+      "stone":         "Floors subfile strip 4, row 24 col 13 → localId 373"
+    }
+  },
+
+  "walls": {
+    "basic": 9380,
+    "_map": {
+      "basic": "Walls subfile col 4, row 5 → localId 164 (pared beige lisa, zona body)"
+    }
+  },
+
+  "doors": {
+    "door":    0,
+    "sliding": 0,
+    "arch":    0,
+    "main":    0,
+    "secret":  0,
+    "_note": "Puertas a 0 de momento. ApartmentScene.drawDoorMarkers() ahora pinta bloques semitransparentes grandes (no strips 2px) para que se vean aunque no haya tile. Cuando localicemos los IDs de las puertas reales en el maestro (tecla P en el juego), los metemos aquí y la capa Doors del .tmj empezará a pintar encima."
+  },
+
+  "unlocks": {
+    "_note": "Cosméticos desbloqueables (STYLE_LOCK §3)."
+  }
+}

@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Silkscreen — tipografía pixel del juego.
+ * It.9-pre: las URLs woff2 directas que usábamos (v5) dieron 404 porque
+ * Google rota los hashes. Usamos `<link>` al CSS oficial en layout.tsx
+ * HEAD que siempre tiene URLs frescas. Aquí no declaramos @font-face.
+ */
+
+:root {
+  --flat-bg: #0b0c10;
+  --flat-ink: #e8e6df;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--flat-bg);
+  color: var(--flat-ink);
+}
+
+body {
+  /* It.8.5b: aplicamos Silkscreen al body para forzar al navegador a
+   * descargar la fuente desde el principio. Si sólo Phaser la pide en
+   * Canvas2D, el navegador puede decidir no descargarla. */
+  font-family: 'Silkscreen', monospace;
+}
+
+/* Pixel-perfect rendering cuando Phaser monte su canvas */
+canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

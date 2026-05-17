@@ -1,0 +1,33 @@
+{
+    "activeFile": "public/assets/maps/apartment.tmj",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Todos los archivos (*)",
+    "fileStates": {
+        "": {
+            "scaleInEditor": 1
+        },
+        "public/assets/maps/apartment.tmj": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1032,
+                "y": 296
+            }
+        },
+        "public/assets/maps/apartment.tmj#Interiors_16x16": {
+            "scaleInDock": 1
+        },
+        "public/assets/maps/apartment.tmj#Room_Builder_16x16": {
+            "scaleInDock": 1
+        }
+    },
+    "last.imagePath": "K:/TheFlat/public/assets/tilesets/limezu",
+    "openFiles": [
+        "public/assets/maps/apartment.tmj"
+    ],
+    "project": "the-flat.tiled-project",
+    "recentFiles": [
+        "public/assets/maps/apartment.tmj"
+    ]
+}

@@ -1,0 +1,394 @@
+{
+  "tileSize": 16,
+  "mapWidth": 48,
+  "mapHeight": 32,
+  "spawn": {
+    "x": 19,
+    "y": 29,
+    "room": "entrada"
+  },
+  "rooms": [
+    {
+      "id": "terraza",
+      "name": "Terraza",
+      "x": 0,
+      "y": 0,
+      "w": 14,
+      "h": 11,
+      "floorType": "stone",
+      "color": "#2d5a4a",
+      "exterior": true
+    },
+    {
+      "id": "cocina",
+      "name": "Cocina",
+      "x": 14,
+      "y": 0,
+      "w": 16,
+      "h": 11,
+      "floorType": "tile",
+      "color": "#5a5530"
+    },
+    {
+      "id": "salon",
+      "name": "Salón",
+      "x": 30,
+      "y": 0,
+      "w": 18,
+      "h": 11,
+      "floorType": "wood",
+      "color": "#5a3d4a"
+    },
+    {
+      "id": "bano",
+      "name": "Baño",
+      "x": 0,
+      "y": 11,
+      "w": 14,
+      "h": 9,
+      "floorType": "tile",
+      "color": "#3d4a5a"
+    },
+    {
+      "id": "habitacion-alex",
+      "name": "Habitación de Alex",
+      "x": 0,
+      "y": 20,
+      "w": 14,
+      "h": 12,
+      "floorType": "carpet_purple",
+      "color": "#4a3d5a"
+    },
+    {
+      "id": "entrada",
+      "name": "Entrada",
+      "x": 14,
+      "y": 11,
+      "w": 12,
+      "h": 21,
+      "floorType": "wood",
+      "color": "#2a2a35"
+    },
+    {
+      "id": "habitacion-maria",
+      "name": "Habitación de María",
+      "x": 26,
+      "y": 11,
+      "w": 22,
+      "h": 21,
+      "floorType": "carpet_pink",
+      "color": "#5a3d3d"
+    },
+    {
+      "id": "habitacion-secreta",
+      "name": "Habitación Secreta",
+      "x": 40,
+      "y": 24,
+      "w": 8,
+      "h": 8,
+      "floorType": "wood_dark",
+      "color": "#7a5533",
+      "secret": true
+    }
+  ],
+  "doors": [
+    {
+      "name": "cocina-terraza",
+      "x": 14,
+      "y": 4,
+      "dir": "v",
+      "length": 2,
+      "type": "sliding"
+    },
+    {
+      "name": "foyer-open-plan",
+      "x": 15,
+      "y": 11,
+      "dir": "h",
+      "length": 10,
+      "type": "arch"
+    },
+    {
+      "name": "entrada-bano",
+      "x": 14,
+      "y": 14,
+      "dir": "v",
+      "length": 2,
+      "type": "door"
+    },
+    {
+      "name": "entrada-alex",
+      "x": 14,
+      "y": 26,
+      "dir": "v",
+      "length": 2,
+      "type": "door"
+    },
+    {
+      "name": "entrada-maria",
+      "x": 26,
+      "y": 20,
+      "dir": "v",
+      "length": 2,
+      "type": "door"
+    },
+    {
+      "name": "maria-secreta",
+      "x": 40,
+      "y": 27,
+      "dir": "v",
+      "length": 2,
+      "type": "secret"
+    },
+    {
+      "name": "main-entrance",
+      "x": 18,
+      "y": 31,
+      "dir": "h",
+      "length": 2,
+      "type": "main"
+    }
+  ],
+  "openPlanGaps": [
+    {
+      "description": "Cocina <-> Salón (sin pared, open plan)",
+      "x": 30,
+      "y": 1,
+      "dir": "v",
+      "length": 9
+    }
+  ],
+  "interactables": [
+    {
+      "id": "front-door",
+      "x": 19,
+      "y": 30,
+      "type": "front-door",
+      "room": "entrada"
+    },
+    {
+      "id": "coat-rack",
+      "x": 15,
+      "y": 12,
+      "type": "coat-rack",
+      "room": "entrada"
+    },
+    {
+      "id": "plant-entrada",
+      "x": 24,
+      "y": 12,
+      "type": "plant",
+      "room": "entrada"
+    },
+    {
+      "id": "fridge",
+      "x": 15,
+      "y": 2,
+      "type": "fridge",
+      "room": "cocina"
+    },
+    {
+      "id": "stove",
+      "x": 17,
+      "y": 1,
+      "type": "stove",
+      "room": "cocina"
+    },
+    {
+      "id": "sink",
+      "x": 20,
+      "y": 1,
+      "type": "sink",
+      "room": "cocina"
+    },
+    {
+      "id": "dining-table",
+      "x": 22,
+      "y": 6,
+      "type": "dining-table",
+      "room": "cocina"
+    },
+    {
+      "id": "tv",
+      "x": 38,
+      "y": 1,
+      "type": "tv",
+      "room": "salon"
+    },
+    {
+      "id": "coffee-table",
+      "x": 38,
+      "y": 5,
+      "type": "coffee-table",
+      "room": "salon"
+    },
+    {
+      "id": "sofa",
+      "x": 38,
+      "y": 7,
+      "type": "sofa",
+      "room": "salon"
+    },
+    {
+      "id": "bookshelf",
+      "x": 31,
+      "y": 1,
+      "type": "bookshelf",
+      "room": "salon"
+    },
+    {
+      "id": "telescope",
+      "x": 11,
+      "y": 2,
+      "type": "telescope",
+      "room": "terraza"
+    },
+    {
+      "id": "plant-terraza",
+      "x": 2,
+      "y": 2,
+      "type": "plant",
+      "room": "terraza"
+    },
+    {
+      "id": "candle-salon",
+      "x": 38,
+      "y": 5,
+      "type": "candle",
+      "room": "salon"
+    },
+    {
+      "id": "cuckoo-salon",
+      "x": 33,
+      "y": 2,
+      "type": "cuckoo",
+      "room": "salon"
+    },
+    {
+      "id": "mirror",
+      "x": 5,
+      "y": 12,
+      "type": "mirror",
+      "room": "bano"
+    },
+    {
+      "id": "washbasin",
+      "x": 5,
+      "y": 13,
+      "type": "washbasin",
+      "room": "bano"
+    },
+    {
+      "id": "bathroom-cabinet",
+      "x": 3,
+      "y": 12,
+      "type": "bathroom-cabinet",
+      "room": "bano"
+    },
+    {
+      "id": "wc",
+      "x": 11,
+      "y": 12,
+      "type": "wc",
+      "room": "bano"
+    },
+    {
+      "id": "bathtub",
+      "x": 1,
+      "y": 17,
+      "type": "bathtub",
+      "room": "bano"
+    },
+    {
+      "id": "bed-alex",
+      "x": 1,
+      "y": 29,
+      "type": "bed",
+      "room": "habitacion-alex"
+    },
+    {
+      "id": "speakers-alex",
+      "x": 1,
+      "y": 21,
+      "type": "speakers",
+      "room": "habitacion-alex"
+    },
+    {
+      "id": "pc-alex",
+      "x": 11,
+      "y": 21,
+      "type": "pc",
+      "room": "habitacion-alex"
+    },
+    {
+      "id": "pc-maria",
+      "x": 27,
+      "y": 13,
+      "type": "pc",
+      "room": "habitacion-maria"
+    },
+    {
+      "id": "bed-maria",
+      "x": 45,
+      "y": 13,
+      "type": "bed",
+      "room": "habitacion-maria"
+    },
+    {
+      "id": "wardrobe-maria",
+      "x": 27,
+      "y": 25,
+      "type": "wardrobe",
+      "room": "habitacion-maria"
+    },
+    {
+      "id": "safe-secreta",
+      "x": 46,
+      "y": 25,
+      "type": "safe",
+      "room": "habitacion-secreta"
+    },
+    {
+      "id": "escape-hatch",
+      "x": 44,
+      "y": 30,
+      "type": "escape-hatch",
+      "room": "habitacion-secreta"
+    },
+    {
+      "id": "secret-door",
+      "x": 40,
+      "y": 27,
+      "type": "secret-door",
+      "room": "habitacion-maria"
+    },
+    {
+      "id": "piano",
+      "x": 35,
+      "y": 13,
+      "type": "piano",
+      "room": "habitacion-maria"
+    },
+    {
+      "id": "fireplace",
+      "x": 7,
+      "y": 21,
+      "type": "fireplace",
+      "room": "habitacion-alex"
+    },
+    {
+      "id": "arpa",
+      "x": 33,
+      "y": 16,
+      "type": "piano",
+      "room": "habitacion-maria"
+    },
+    {
+      "id": "wind-toy",
+      "x": 3,
+      "y": 6,
+      "type": "wind-toy",
+      "room": "terraza"
+    }
+  ]
+}

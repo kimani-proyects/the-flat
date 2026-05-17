@@ -1,0 +1,31 @@
+{
+    "automappingRulesFile": "",
+    "commands": [
+    ],
+    "compatibilityVersion": 1100,
+    "extensionsPath": "extensions",
+    "folders": [
+        "public/assets"
+    ],
+    "propertyTypes": [
+        {
+            "id": 1,
+            "name": "InteractableType",
+            "storageType": "string",
+            "type": "enum",
+            "values": [
+                "keypad",
+                "pc",
+                "bed",
+                "tv",
+                "sofa",
+                "fridge",
+                "stove",
+                "mirror",
+                "bathtub",
+                "telescope"
+            ],
+            "valuesAsFlags": false
+        }
+    ]
+}
