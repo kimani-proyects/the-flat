@@ -4,22 +4,19 @@
 
 import { TOMODACHI_SWITCH_SERIAL as DEMO_SERIAL } from './secrets.example';
 
-let realSerial: string | null = null;
-
 /**
  * ENV (Vercel / producción)
  */
 const envSerial =
-  typeof process !== 'undefined'
-    ? process.env.NEXT_PUBLIC_TOMODACHI_SERIAL ?? null
-    : null;
+  process.env.NEXT_PUBLIC_TOMODACHI_SERIAL ?? null;
 
 /**
- * LOCAL ONLY (evita romper build en Vercel)
+ * LOCAL ONLY (solo dev)
  */
+let realSerial: string | null = null;
+
 if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
   try {
-    // dynamic require SOLO en browser/dev
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const local = require('./secrets.local');
 
@@ -32,22 +29,31 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
 }
 
 /**
- * FINAL SERIAL
+ * SERIAL FINAL
+ * PRIORIDAD:
+ * 1. Vercel (PROD)
+ * 2. Local dev
+ * 3. Demo (solo si NO hay otra opción)
  */
 export const TOMODACHI_SERIAL: string =
   envSerial ?? realSerial ?? DEMO_SERIAL;
 
-export const HAS_REAL_SERIAL =
-  Boolean(envSerial || realSerial);
+export const HAS_REAL_SERIAL = Boolean(envSerial || realSerial);
 
 /**
- * Warning dev only
+ * Warning SOLO dev
  */
-if (typeof window !== 'undefined' && !HAS_REAL_SERIAL) {
+if (typeof window !== 'undefined' && !envSerial && process.env.NODE_ENV === 'development') {
   console.warn(
-    '[secrets] usando serial DEMO. Configura NEXT_PUBLIC_TOMODACHI_SERIAL en Vercel.',
+    '[secrets] usando DEMO serial. Falta NEXT_PUBLIC_TOMODACHI_SERIAL en Vercel o .env.local',
   );
 }
+
+/**
+ * 🎮 MORSE GAME
+ * SIEMPRE se genera desde el serial activo (Vercel o fallback)
+ */
+const MORSE_SOURCE = TOMODACHI_SERIAL;
 
 /** Convierte texto ASCII a código Morse internacional */
 export function toMorse(s: string): string {
@@ -70,3 +76,9 @@ export function toMorse(s: string): string {
     .filter(Boolean)
     .join(' ');
 }
+
+/**
+ * 🔥 MORSECODE DEL JUEGO
+ * SIEMPRE basado en Vercel → esto es lo importante
+ */
+export const MORSE_CODE_GAME = toMorse(MORSE_SOURCE);
